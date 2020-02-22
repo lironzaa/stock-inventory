@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stock-item-card',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock-item-card.component.scss']
 })
 export class StockItemCardComponent implements OnInit {
-
+  @Input() isInStock: boolean = true;
   constructor() { }
 
   ngOnInit() {
