@@ -8,9 +8,11 @@ import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.compo
   templateUrl: './stock-item-list.component.html',
   styleUrls: ['./stock-item-list.component.scss']
 })
+
 export class StockItemListComponent implements OnInit {
   @Input() stockItems: StockItem[];
   @Output() deleteItem: EventEmitter<StockItem> = new EventEmitter<StockItem>();
+  @Output() update: EventEmitter<UpdateEvent> = new EventEmitter<UpdateEvent>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -29,9 +31,16 @@ export class StockItemListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.stockItems[this.stockItems.indexOf(stockItem)] = result;
+        this.update.emit({
+          old: stockItem,
+          new: result
+        })
       }
     })
   }
+}
 
+export interface UpdateEvent {
+  old: StockItem;
+  new: StockItem;
 }
