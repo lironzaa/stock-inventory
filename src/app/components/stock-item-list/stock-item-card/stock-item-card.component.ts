@@ -7,7 +7,7 @@ import { StockItem } from './../../../models/stock-item.model';
   styleUrls: ['./stock-item-card.component.scss']
 })
 export class StockItemCardComponent implements OnInit {
-  @Input() item: StockItem;
+  @Input() stockItem: StockItem;
   @Output() deleteButtonClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() cardClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }

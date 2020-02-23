@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class EditItemModalComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditItemModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public item: StockItem) { }
+    @Inject(MAT_DIALOG_DATA) public stockItem: StockItem) { }
 
   ngOnInit() {
   }

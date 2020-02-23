@@ -1,11 +1,11 @@
 <div class="root">
   <div class="stock-item" (click)="onCardClicked()"
-    [ngClass]="{ 'in-stock':item.amount>=0,'sold-stock':item.amount<0 }">
+    [ngClass]="{ 'in-stock':stockItem.amount>=0,'sold-stock':stockItem.amount<0 }">
     <div class="description">
-      <p>{{item.description}}</p>
+      <p>{{stockItem.description}}</p>
     </div>
     <div class="amount">
-      <p>{{item.amount}}</p>
+      <p>{{stockItem.amount}}</p>
     </div>
   </div>
   <div class="delete-icon-button" (click)="onDeleteButtonClick()"></div>

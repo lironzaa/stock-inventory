@@ -17,19 +17,19 @@ export class StockItemListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onDeleteItem(item: StockItem): void {
-    this.deleteItem.emit(item);
+  onDeleteItem(stockItem: StockItem): void {
+    this.deleteItem.emit(stockItem);
   }
 
-  onCardClicked(item: StockItem): void {
+  onCardClicked(stockItem: StockItem): void {
     const dialogRef = this.dialog.open(EditItemModalComponent, {
       width: '580px',
-      data: item
+      data: stockItem
     })
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.stockItems[this.stockItems.indexOf(item)] = result;
+        this.stockItems[this.stockItems.indexOf(stockItem)] = result;
       }
     })
   }

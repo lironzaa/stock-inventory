@@ -11,9 +11,16 @@ export class AddItemFormComponent implements OnInit {
   @Input() stockItem: StockItem = new StockItem('', null);
   @Output() formSubmit: EventEmitter<StockItem> = new EventEmitter<StockItem>();
 
+  isNewItem: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    if (this.stockItem.amount !== null) {
+      this.isNewItem = false;
+    } else {
+      this.isNewItem = true;
+    }
   }
 
   onSubmit(form: NgForm): void {

@@ -3,9 +3,10 @@
     <div class="in-stock-column">
       <h1>Total Stock Inventory</h1>
       <div class="stock-items">
-        <div *ngFor="let item of stockItems">
-          <app-stock-item-card *ngIf="item.amount >=0" [item]="item" style="display:block;margin-bottom: 20px;"
-            (deleteButtonClicked)="onDeleteItem(item)" (cardClicked)="onCardClicked(item)">
+        <div *ngFor="let stockItem of stockItems">
+          <app-stock-item-card *ngIf="stockItem.amount >=0" [stockItem]="stockItem"
+            style="display:block;margin-bottom: 20px;" (deleteButtonClicked)="onDeleteItem(stockItem)"
+            (cardClicked)="onCardClicked(stockItem)">
           </app-stock-item-card>
         </div>
       </div>
@@ -13,9 +14,10 @@
     <div class="sold-stock-column">
       <h1>Sold Stock Inventory</h1>
       <div class="stock-items">
-        <div *ngFor="let item of stockItems">
-          <app-stock-item-card *ngIf="item.amount <0" [item]="item" style="display:block;margin-bottom: 20px;"
-            (deleteButtonClicked)="onDeleteItem(item)" (cardClicked)="onCardClicked(item)">
+        <div *ngFor="let stockItem of stockItems">
+          <app-stock-item-card *ngIf="stockItem.amount <0" [stockItem]="stockItem"
+            style="display:block;margin-bottom: 20px;" (deleteButtonClicked)="onDeleteItem(stockItem)"
+            (cardClicked)="onCardClicked(stockItem)">
           </app-stock-item-card>
         </div>
       </div>
