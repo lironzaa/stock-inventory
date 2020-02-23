@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { StockItem } from './../../models/stock-item.model';
 
 @Component({
@@ -8,10 +8,15 @@ import { StockItem } from './../../models/stock-item.model';
 })
 export class StockItemListComponent implements OnInit {
   @Input() stockItems: StockItem[];
+  @Output() deleteItem: EventEmitter<StockItem> = new EventEmitter<StockItem>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onDeleteItem(item: StockItem): void {
+    this.deleteItem.emit(item);
   }
 
 }

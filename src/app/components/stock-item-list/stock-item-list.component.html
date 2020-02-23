@@ -4,7 +4,8 @@
       <h1>Total Stock Inventory</h1>
       <div class="stock-items">
         <div *ngFor="let item of stockItems">
-          <app-stock-item-card *ngIf="item.amount >=0" [item]="item" style="display:block;margin-bottom: 20px;">
+          <app-stock-item-card *ngIf="item.amount >=0" [item]="item" style="display:block;margin-bottom: 20px;"
+            (deleteButtonClicked)="onDeleteItem(item)">
           </app-stock-item-card>
         </div>
       </div>
@@ -13,7 +14,8 @@
       <h1>Sold Stock Inventory</h1>
       <div class="stock-items">
         <div *ngFor="let item of stockItems">
-          <app-stock-item-card *ngIf="item.amount <0" [item]="item" style="display:block;margin-bottom: 20px;">
+          <app-stock-item-card *ngIf="item.amount <0" [item]="item" style="display:block;margin-bottom: 20px;"
+            (deleteButtonClicked)="onDeleteItem(item)">
           </app-stock-item-card>
         </div>
       </div>

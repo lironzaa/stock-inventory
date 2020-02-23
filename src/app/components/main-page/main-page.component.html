@@ -14,4 +14,4 @@
 
 <hr style="margin-top:0">
 
-<app-stock-item-list [stockItems]="stockItems"></app-stock-item-list>
+<app-stock-item-list [stockItems]="stockItems" (deleteItem)="deleteItem($event)"></app-stock-item-list>

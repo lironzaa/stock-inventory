@@ -14,8 +14,13 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  addStockItem(stockItem: StockItem) {
+  addStockItem(stockItem: StockItem): void {
     this.stockItems.push(stockItem);
+  }
+
+  deleteItem(stockItem: StockItem): void {
+    let index = this.stockItems.indexOf(stockItem);
+    this.stockItems.splice(index, 1);
   }
 
 }

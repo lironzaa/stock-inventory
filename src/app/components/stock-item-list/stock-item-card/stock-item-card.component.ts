@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { StockItem } from './../../../models/stock-item.model';
 
 @Component({
@@ -7,10 +7,15 @@ import { StockItem } from './../../../models/stock-item.model';
   styleUrls: ['./stock-item-card.component.scss']
 })
 export class StockItemCardComponent implements OnInit {
-  @Input() item: StockItem
+  @Input() item: StockItem;
+  @Output() deleteButtonClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onDeleteButtonClick(): void {
+    this.deleteButtonClicked.emit();
   }
 
 }
