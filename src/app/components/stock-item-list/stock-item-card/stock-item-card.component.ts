@@ -9,6 +9,7 @@ import { StockItem } from './../../../models/stock-item.model';
 export class StockItemCardComponent implements OnInit {
   @Input() item: StockItem;
   @Output() deleteButtonClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() cardClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
@@ -18,4 +19,8 @@ export class StockItemCardComponent implements OnInit {
     this.deleteButtonClicked.emit();
   }
 
+  onCardClicked(): void {
+    console.log('clicked');
+    this.cardClicked.emit();
+  }
 }

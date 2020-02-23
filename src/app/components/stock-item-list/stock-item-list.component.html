@@ -5,7 +5,7 @@
       <div class="stock-items">
         <div *ngFor="let item of stockItems">
           <app-stock-item-card *ngIf="item.amount >=0" [item]="item" style="display:block;margin-bottom: 20px;"
-            (deleteButtonClicked)="onDeleteItem(item)">
+            (deleteButtonClicked)="onDeleteItem(item)" (cardClicked)="onCardClicked(item)">
           </app-stock-item-card>
         </div>
       </div>
@@ -15,7 +15,7 @@
       <div class="stock-items">
         <div *ngFor="let item of stockItems">
           <app-stock-item-card *ngIf="item.amount <0" [item]="item" style="display:block;margin-bottom: 20px;"
-            (deleteButtonClicked)="onDeleteItem(item)">
+            (deleteButtonClicked)="onDeleteItem(item)" (cardClicked)="onCardClicked(item)">
           </app-stock-item-card>
         </div>
       </div>

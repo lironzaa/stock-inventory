@@ -1,5 +1,6 @@
 <div class="root">
-  <div class="stock-item" [ngClass]="{ 'in-stock':item.amount>=0,'sold-stock':item.amount<0 }">
+  <div class="stock-item" (click)="onCardClicked()"
+    [ngClass]="{ 'in-stock':item.amount>=0,'sold-stock':item.amount<0 }">
     <div class="description">
       <p>{{item.description}}</p>
     </div>
